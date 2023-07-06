@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <form id="survey-form" method="GET" action="{% url 'save' %}">
+        <div>
+            
+            <fieldset id="entrys">
+                <label id="name-label">Nickname: <input type="text" id="name" name="nick-name" placeholder="Enter your Nickname" required/></label>
+                <label id="email-label">Email: <input type="email" id="email" name="email" placeholder="Enter your Email" required/></label>
+                <label>UID:<input  type="tel" pattern="[0-9]{9}" name="uid" placeholder="Enter your UID"/></label>
+                <label id="number-label">Level: <input type="number" id="number" min="0" max="99" name="level" maxlength="2" placeholder="Enter your Level(Optional)"/></label>
+                <label>Which option best describes your game mode?
+                    <select id="dropdown" name="gamemode">
+                        <option value="">Select an option</option>
+                        <option value="1">I like to heal my team</option>
+                        <option value="2">I like to do a lot of damage</option>
+                        <option value="3">I am able to take more damage than the rest</option>
+                        <option value="4">I am versatile, I like to do everything.</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset id="element" name="element_fav">
+                <label>What element is your favourite?</label>
+                <label><input type="radio" name="element_fav" class="elements" value="fire"/>Fire</label>
+                <label><input type="radio"class="elements" name="element_fav" value="grievous"/>Grievous</label>
+                <label><input type="radio"class="elements" name="element_fav" value="ice"/>Ice</label>
+                <label><input type="radio"class="elements" name="element_fav" value="volt"/>Volt</label>
+            </fieldset>
+            <fieldset id="selectHear">
+                <label>How did you hear about fantasy tower? (Check all you want)
+                    <select id="hear" name="about_tower">
+                        <option value="">Select an option</option>
+                        <option value="1">Recommendation from a Friend</option>
+                        <option value="2">Social Media(YouTube,Twitter,Twitch,etc.)</option>
+                        <option value="3">Publicity</option>
+                        <option value="4">Reading an article</option>
+                        <option value="5">Other</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset id="usuallyTof">
+                <label>What do you usually do in tof?</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="explore"/>Explore The map</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="farming"/>Farming</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="pFriends"/>Play with friends</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="kBosses"/>Kill the bosses</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="uAchivements"/>Unlock achievements</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="story"/>Complete the story</label>
+                <label><input type="checkbox" class="tof" name="usually_tof" value="talk"/>Talk to other players</label>
+                
+            </fieldset>
+            <fieldset id="likeTof">
+                <label>
+                    What do you like about tower of fantasy?</label>
+                    <textarea rows="5" name="like_about" cols="30" placeholder="Tower of fantasy is..."></textarea>
+            </fieldset>
+                
+                <input id="submit" type="submit" value="Submit"/>
+        </div>
+    </form>
+{% endblock content %}
